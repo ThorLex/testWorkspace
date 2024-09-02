@@ -1,34 +1,23 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "npmScope": "test-workspace-datnet",
-  "affected": {
-    "defaultBase": "main"
-  },
-  "cli": {
-    "packageManager": "npm"
-  },
+  "affected": { "defaultBase": "main" },
+  "cli": { "packageManager": "npm" },
   "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     ".eslintrc.json": "*"
   },
   "tasksRunnerOptions": {
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "OTkzNzVhNTUtNTdhNS00ODQ5LWI1ZTUtODAzMWI5YjUwZmQyfHJlYWQtd3JpdGU="
       }
     }
   },
   "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ]
+    "build": [{ "target": "build", "projects": "dependencies" }]
   },
   "generators": {
     "@nrwl/angular:application": {
@@ -37,12 +26,7 @@
       "unitTestRunner": "jest",
       "e2eTestRunner": "cypress"
     },
-    "@nrwl/angular:library": {
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:component": {
-      "style": "scss"
-    }
+    "@nrwl/angular:library": { "linter": "eslint", "unitTestRunner": "jest" },
+    "@nrwl/angular:component": { "style": "scss" }
   }
 }
